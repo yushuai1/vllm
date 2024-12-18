@@ -78,8 +78,8 @@ class CacheEngine:
             # null block in CpuGpuBlockAllocator requires at least that
             # block to be zeroed-out.
             # We zero-out everything for simplicity.
-            if device=="cpu":
-                if tensor_zeros==None:
+            if device == "cpu":
+                if tensor_zeros is None:
                     tensor_zeros = torch.zeros(kv_cache_shape,
                                 dtype=self.dtype,
                                 pin_memory=pin_memory,
